@@ -1,15 +1,9 @@
 ---
 title: 'First post'
-description: 'Lorem ipsum dolor sit amet'
-pubDate: 'Jul 08 2022'
+description: 'First Blog Post'
+pubDate: 'Dec 21 2024'
 heroImage: '/blog-placeholder-3.jpg'
 ---
-First blog post writeup idk
 
-
-
-# header
-
-```
-for int i =0
-```
+### First Post stuff
+Not really sure what to write   
