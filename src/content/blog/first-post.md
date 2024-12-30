@@ -7,6 +7,8 @@ heroImage: '/blog-placeholder-3.jpg'
 
 Exchangeable Image File Format (EXIF) data is a way of storing specific metadata    inside an image file which can include records on the matter in which the photo was taken. Recorded metadata can include any camera settings used, time, date, location, and any other miscellaneous details regarding the image. 
 
+Apparently this stuff has applications in OSINT and digital forensics so I wanted to see what it was about. 
+
 So anyways, I wanted to create a really simple command line program in python that reads an image and simply outputs some basic stuff about an image. 
 
 I did a quick google search initially and it seemed like exif data is primarily found in .jpg and .tiff files so I just ended up finding a [repository](https://github.com/ianare/exif-samples) on github with sample images that contain EXIF data to use.
