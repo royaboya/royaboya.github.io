@@ -271,6 +271,6 @@ GPSDateStamp        : 2018:08:22
 One problem for this particular approach is that there are a looooot of EXIF tags so it is likely that there is an EXIF tag with a definition that isn't added since I haven't tested this script with that many different images. 
 
 
-Overall, I'd like to think this script is in a better position than it was before but as always, there is definitely room for improvment. 
+Overall, I'd like to think this script is in a better position than it was before but as always, there is definitely room for improvement. 
 
 
