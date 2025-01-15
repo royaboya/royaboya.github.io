@@ -12,7 +12,7 @@ Some solutions to my school's CTF Club Challenges for the Hack the Playground GM
 
 What is the coordinate of where the last flag should be planted?
 
-![minesweeper flag img](/public/htp/minesweeper.png "Minesweeper img")
+![minesweeper flag img](/htp/minesweeper.png "Minesweeper img")
 
 Flag format is: CTF{(col,row)}
 
@@ -42,7 +42,7 @@ students do this instead of playing outside?
 
 Message: KLDUBSBEEBGTVNAOLGMIABMI
 
-![four square matrices](/public/htp/four.png "Four Square Matrices")
+![four square matrices](/htp/four.png "Four Square Matrices")
 
 Given the flavor text, I looked up Four Square Cipher and went on [dCode](https://www.dcode.fr/four-squares-cipher)
 and inputted the same exact entries in the matrices and decoded the message
@@ -269,7 +269,8 @@ Finally we chuck these into cyberchef and use `from Charcode` with `delimiter=Co
 # Where's Waldo?
 Waldo just posted this picture, and it looks so pretty! Where are they?
 
-![waldo post](royaboya.github.io/public/htp/waldo.png "Waldo img")
+![waldo post](/royaboya/htp/waldo.png "Waldo img")
+
 
 
 Use a reverse google image lookup on the image and see that it is most likely South Beach in Miami
