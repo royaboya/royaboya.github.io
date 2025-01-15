@@ -2,7 +2,7 @@
 title: NEU 'CTF Club Hack the Playground'
 description: 'Third Post'
 pubDate: 'Jan 14 2025'
-heroImage: '/blog-placeholder-1.jpg'
+heroImage: '/blog-placeholder-4.jpg'
 ---
 
 Some solutions to my school's CTF Club Challenges for the Hack the Playground GM in the time that I was there 
@@ -12,7 +12,7 @@ Some solutions to my school's CTF Club Challenges for the Hack the Playground GM
 
 What is the coordinate of where the last flag should be planted?
 
-<add Image link here>
+![minesweeper flag img](/public/htp/minesweeper.png "Minesweeper img")
 
 Flag format is: CTF{(col,row)}
 
@@ -23,7 +23,7 @@ Flag: CTF{(9,5)}
 
 ---
 
-Hide n Seek: Hiding Monster
+# Hide n Seek: Hiding Monster
 Hide n Seek is so fun! I swear, I just saw the monst around
 here somewhere... did he hide in this website somehow?
 
@@ -42,7 +42,7 @@ students do this instead of playing outside?
 
 Message: KLDUBSBEEBGTVNAOLGMIABMI
 
-<add image here>
+![four square matrices](/public/htp/four.png "Four Square Matrices")
 
 Given the flavor text, I looked up Four Square Cipher and went on [dCode](https://www.dcode.fr/four-squares-cipher)
 and inputted the same exact entries in the matrices and decoded the message
@@ -51,7 +51,8 @@ CTF{FOURSQUAREISCOOLWITHMATH}
 
 ----
 
-Hopscotch
+# Hopscotch
+
 Did you know I am actually The World's Best Hopscotcher™? No way
 you beat me in it! I'll even give you a prize if you do.
 
@@ -180,7 +181,7 @@ function calculateNextHop() {
 
 This code just reverses the correct path which was already in reverse order so we have another path: `/hop/upintheclouds/`
 
-```
+```html
 <!DOCTYPE html>
 <html>
     <head>
@@ -265,8 +266,11 @@ Finally we chuck these into cyberchef and use `from Charcode` with `delimiter=Co
 ```
 
 ---
-Where's Waldo?
+# Where's Waldo?
 Waldo just posted this picture, and it looks so pretty! Where are they?
+
+![waldo post](/public/htp/waldo.png "Waldo img")
+
 
 Use a reverse google image lookup on the image and see that it is most likely South Beach in Miami
 Then we submitted multiple different strings until one worked: 
@@ -275,8 +279,7 @@ CTF{SOUTHBEACH}
 
 ---
 
-
-Mother, May I?
+# Mother, May I?
 Ask mother for the flag, nicely
 
 connect with `nc gm.neu-ctf.club 11109`
