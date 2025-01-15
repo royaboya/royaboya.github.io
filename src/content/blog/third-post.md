@@ -12,7 +12,7 @@ Some solutions to my school's CTF Club Challenges for the Hack the Playground GM
 
 What is the coordinate of where the last flag should be planted?
 
-![minesweeper flag img](/public/htp/minesweeper.png "Minesweeper img")
+![minesweeper flag img](/htp/minesweeper.png "Minesweeper img")
 
 Flag format is: CTF{(col,row)}
 
@@ -269,7 +269,7 @@ Finally we chuck these into cyberchef and use `from Charcode` with `delimiter=Co
 # Where's Waldo?
 Waldo just posted this picture, and it looks so pretty! Where are they?
 
-![waldo post](/royaboya/htp/waldo.png "Waldo img")
+![waldo post](/htp/waldo.png "Waldo img")
 
 
 
