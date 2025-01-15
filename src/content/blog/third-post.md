@@ -269,7 +269,7 @@ Finally we chuck these into cyberchef and use `from Charcode` with `delimiter=Co
 # Where's Waldo?
 Waldo just posted this picture, and it looks so pretty! Where are they?
 
-![waldo post](/public/htp/waldo.png "Waldo img")
+![waldo post](royaboya.github.io/public/htp/waldo.png "Waldo img")
 
 
 Use a reverse google image lookup on the image and see that it is most likely South Beach in Miami
