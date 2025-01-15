@@ -268,7 +268,7 @@ Finally we chuck these into cyberchef and use `from Charcode` with `delimiter=Co
 ## Where's Waldo?
 Waldo just posted this picture, and it looks so pretty! Where are they?
 
-![waldo post](/public/htp/waldo.png "Waldo img")
+![waldo post](/htp/waldo.png "Waldo img")
 
 
 
@@ -353,7 +353,7 @@ if the order of the plaintext phrase is "codes flags crack seize" and the
 ciphertext for "codes" is the upper lefthand corner, the first character of
 the flag would be "1".
 
-![memory](/public/htp/memory.png "memory codes")
+![memory](/htp/memory.png "memory codes")
 ---
 The hint/flavortext tells us that the flag can be found by somehow matching the 
 placement of the phrases in the image with that of a right hand numberpad on a standard
