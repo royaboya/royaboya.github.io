@@ -381,6 +381,40 @@ Then we just test the two likely combinations:
 
 Flag: CTF{5934}
 
+## Passing Notes
+
+---
+My friend and I are in coding class, working on an assignment. They
+sent me this file, which I think they created using our code.
+What does it say?
+
+
+The exercise provided a text file and a powershell script: `ciphertext.txt` and `assignment1.ps1`
+
+ciphertext.txt:
+```
+@WExd2uf\n0\vq\`3g0"~
+```
+
+assignment1.ps1:
+```ps1
+$bytes = [System.Text.Encoding]::ASCII.GetBytes((cat plaintext.txt))
+[System.Collections.Generic.List[byte]]$newBytes = @()
+$bytes.ForEach({
+    $newBytes.Add($_ -bxor 3)
+    })
+$newString =  [System.Text.Encoding]::ASCII.GetString($newBytes)
+echo $newString | Out-File -Encoding ascii ciphertext.txt
+
+```
+The program seems to perform a XOR operation on a plaintext file and then 
+write it to `ciphertext.txt` so we can open this in cyberchef and XOR the
+ciphertext with a key of 3 to undo the original
+
+Flag: CTF{g1ve_m3_ur_c0d3!}	
+
+
+
 
 
 
