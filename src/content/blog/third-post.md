@@ -7,12 +7,12 @@ heroImage: '/htp/title.png'
 
 Some solutions to my school's CTF Club Challenges for the Hack the Playground GM in the time that I was there 
 
----
-# Minesweeper
+--- 
+
+## Minesweeper
 
 What is the coordinate of where the last flag should be planted?
-
-![minesweeper flag img](/htp/minesweeper.png "Minesweeper img")
+![minesweeper flag img](/htp/minesweeper.png "Minesweeper img")  
 
 Flag format is: CTF{(col,row)}
 
@@ -23,7 +23,7 @@ Flag: CTF{(9,5)}
 
 ---
 
-# Hide n Seek: Hiding Monster
+## Hide n Seek: Hiding Monster
 Hide n Seek is so fun! I swear, I just saw the monst around
 here somewhere... did he hide in this website somehow?
 
@@ -33,9 +33,8 @@ with name `secret_cookie` and the value containing the flag:
 
 secret_cookie CTF{C00KIEM0NST3R}
 
---
 
-Four-Square
+## Four-Square
 Hmmm... I was told there would be four square at recess,
 but instead I got an image and a message. Since when do
 students do this instead of playing outside?
@@ -51,7 +50,7 @@ CTF{FOURSQUAREISCOOLWITHMATH}
 
 ----
 
-# Hopscotch
+## Hopscotch
 
 Did you know I am actually The World's Best Hopscotcher™? No way
 you beat me in it! I'll even give you a prize if you do.
@@ -200,17 +199,17 @@ This code just reverses the correct path which was already in reverse order so w
 ```
 Here we have four different scripts to check out:
 
-### stratus.js:
+#### stratus.js:
 ```js
 function lets_do_some_simple_math(_0x522d1a){return _0x522d1a+0x1;}
 ```
 
-### cirrus.js:
+#### cirrus.js:
 ```js
 (function(_0x1fc294,_0x183366){var _0x55f524=_0x3fe7,_0x31795b=_0x1fc294();while(!![]){try{var _0x49e416=-parseInt(_0x55f524(0xaa))/0x1+parseInt(_0x55f524(0xa7))/0x2+parseInt(_0x55f524(0xa3))/0x3+-parseInt(_0x55f524(0xa4))/0x4+-parseInt(_0x55f524(0xa6))/0x5*(parseInt(_0x55f524(0xa8))/0x6)+parseInt(_0x55f524(0xa2))/0x7*(-parseInt(_0x55f524(0xab))/0x8)+parseInt(_0x55f524(0xa9))/0x9;if(_0x49e416===_0x183366)break;else _0x31795b['push'](_0x31795b['shift']());}catch(_0x3b8c87){_0x31795b['push'](_0x31795b['shift']());}}}(_0x5d0e,0x3dbcd));function _0x3fe7(_0x5b09a2,_0x4bae2b){var _0x5d0e34=_0x5d0e();return _0x3fe7=function(_0x3fe70b,_0x2f769e){_0x3fe70b=_0x3fe70b-0xa2;var _0x14cbbb=_0x5d0e34[_0x3fe70b];return _0x14cbbb;},_0x3fe7(_0x5b09a2,_0x4bae2b);}function _0x5d0e(){var _0xdf6477=['3274389wtvChK','141618fdkMLt','24Tcryxl','Hello\x20World!','102193LVBWFl','1198017iwJkqg','518240HCBkvu','log','10GRjGAN','19812jPnwdh','615642sosMKD'];_0x5d0e=function(){return _0xdf6477;};return _0x5d0e();}function very_cool_helpful_func(_0x19e62b){var _0x5e6a13=_0x3fe7;console[_0x5e6a13(0xa5)](_0x5e6a13(0xac));}
 ```
 
-### cumulus.js:
+#### cumulus.js:
 ```js
 function tooootally_not_important_at_all_wink_wink() {
     obfuscated_hop = [0x4e,0x1b,0x0a,0x13,0x5a,0x05,0x0a,0x1c,0x0d,0x16,0x0d,0x0a,0x06,0x0c,0x02,0x0b,0x0a,0x1e,0x17,0x1c,0x06,0x1c,0x0a,0x07,0x14,0x06,0x11,0x03,0x0c,0x0a]
@@ -227,7 +226,7 @@ function tooootally_not_important_at_all_wink_wink() {
 }
 ```
 
-### nimbus.js:
+#### nimbus.js:
 ```js
 (function(_0x1c3c35,_0x43f217){var _0x5927af=_0x35e5,_0x4a5974=_0x1c3c35();while(!![]){try{var _0x2a7051=parseInt(_0x5927af(0x1ae))/0x1+parseInt(_0x5927af(0x1b3))/0x2*(parseInt(_0x5927af(0x1b0))/0x3)+parseInt(_0x5927af(0x1af))/0x4*(parseInt(_0x5927af(0x1ad))/0x5)+parseInt(_0x5927af(0x1b6))/0x6*(-parseInt(_0x5927af(0x1b2))/0x7)+parseInt(_0x5927af(0x1a9))/0x8*(parseInt(_0x5927af(0x1ab))/0x9)+parseInt(_0x5927af(0x1b4))/0xa+-parseInt(_0x5927af(0x1b5))/0xb;if(_0x2a7051===_0x43f217)break;else _0x4a5974['push'](_0x4a5974['shift']());}catch(_0xb3ac73){_0x4a5974['push'](_0x4a5974['shift']());}}}(_0xc59c,0xa6dc7));function _0x35e5(_0x149081,_0x4ec402){var _0xc59ccf=_0xc59c();return _0x35e5=function(_0x35e599,_0x436891){_0x35e599=_0x35e599-0x1a9;var _0x61c121=_0xc59ccf[_0x35e599];return _0x61c121;},_0x35e5(_0x149081,_0x4ec402);}function _0xc59c(){var _0x4a0bf3=['779242ojaVpn','672000PvGtlP','4683899dAiKSX','3946614zbTmuh','2134264VebnMQ','yrros\x20,poh\x20eht\x20toN','18WPZvsX','reverse','2758655MiUlFP','224923xuddha','4WHIGiU','3uoWMpe','join','7xVzEns'];_0xc59c=function(){return _0x4a0bf3;};return _0xc59c();}function do_something(){var _0x54c94c=_0x35e5;str=_0x54c94c(0x1aa);var _0x48e154=str['split'](''),_0x48a34e=_0x48e154[_0x54c94c(0x1ac)](),_0x475747=_0x48a34e[_0x54c94c(0x1b1)]('');}
 ```
@@ -266,10 +265,10 @@ Finally we chuck these into cyberchef and use `from Charcode` with `delimiter=Co
 ```
 
 ---
-# Where's Waldo?
+## Where's Waldo?
 Waldo just posted this picture, and it looks so pretty! Where are they?
 
-![waldo post](/htp/waldo.png "Waldo img")
+![waldo post](/public/htp/waldo.png "Waldo img")
 
 
 
@@ -280,7 +279,7 @@ CTF{SOUTHBEACH}
 
 ---
 
-# Mother, May I?
+## Mother, May I?
 Ask mother for the flag, nicely
 
 connect with `nc gm.neu-ctf.club 11109`
@@ -340,3 +339,48 @@ please flag
 please flag
 "It's CTF{m00oooo00000oooooommmmm}, now leave me alone!"
 ```
+---
+
+## Memory
+---
+Let's play a game of memory! Match the plaintext words to their
+corresponding ciphertext. There is an order to this, since the plaintext
+words can be organized in a certain order to spell out a sensible phrase.
+
+The flag is four numbers, wrapped in CTF{}, derived from the position
+and order of the ciphertext cards, if they were on a keypad. For example,
+if the order of the plaintext phrase is "codes flags crack seize" and the
+ciphertext for "codes" is the upper lefthand corner, the first character of
+the flag would be "1".
+
+![memory](/public/htp/memory.png "memory codes")
+---
+The hint/flavortext tells us that the flag can be found by somehow matching the 
+placement of the phrases in the image with that of a right hand numberpad on a standard
+keyboard. 
+
+There weren't that many possibilities for the plaintext phrase since we only had four words: `crack`, 
+`seize`, `flags`, `codes` and the two arrangements that made sense would be `seize flags crack codes` and 
+`crack codes seize flags`.
+
+The diagram also shows ASCII conversions of the words so properly converting them gives us:
+- seize (top right)  
+- flags (middle left)
+- crack (middle)
+- codes (bottom right)
+
+I didn't really get the matching part of the exercise for the words in positions 1, 6, 7 and 8 and how it related 
+to getting the flag but continuing from there, we get the number pad positions for each of the ascii words
+- seize (top right) -> 3 
+- flags (middle left) -> 4
+- crack (middle) -> 5
+- codes (bottom right) -> 9
+Then we just test the two likely combinations:
+`3 4 5 9` 
+`5 9 3 4`
+
+Flag: CTF{5934}
+
+
+
+
