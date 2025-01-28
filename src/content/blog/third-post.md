@@ -1,5 +1,5 @@
 ---
-title: NEU 'CTF Club Hack the Playground'
+title: NEU CTF Club 'Hack the Playground'
 description: 'Third Post'
 pubDate: 'Jan 14 2025'
 heroImage: '/htp/title.png'
