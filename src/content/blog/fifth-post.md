@@ -9,9 +9,49 @@ I got incredibly humbled by this CTF but it was a good learning experience nonet
 # Binary
 I wasn't able to save the challenge descriptions, but each of the challenges were to try and get the flag out of the binary.
 
+
+## HuskySniff
+Provided binary: `huskysniff`
+```
+roya@LAPTOP-EGQVCHJB:/mnt/c/C2CTF$ ./huskysniff
+Word on campus is the Northeastern Husky sniffed out the hidden flag—apparently it's tucked away in the executable. Woof you waiting for? Happy hacking!  
+```
+I ran `strings`:
+```
+/lib64/ld-linux-x86-64.so.2 // line 1
+libc.so.6
+__printf_chk
+__cxa_finalize
+......
+.fini_array
+.dynamic
+.data
+.bss
+.comment // line 826
+```
+Then `grep`'d it with `string=c2c` to get `c2c_ctf{crwzotngdyqfqbjc}`
+
+**Flag**: c2c_ctf{crwzotngdyqfqbjc}
+
+
 ## Husky Walk 
 Provided binary: `huskywalk`
 
+```
+roya@LAPTOP-EGQVCHJB:/mnt/c/C2CTF$ ./huskywalk
+Hey hooman! Can we pleaaase go to the park? I wanna run super fast, sniff all the things, and maybe make some new furry friends! Pretty please with extra belly rubs? Which park are we going to?! 
+ blahblahblah
+Umm, hooman… not that park! It's boring, no good sniffs, and no fun friends to play with! Can we go somewhere way more exciting instead? Pleaaase? 
+```
+
+I ran `strings ./huskywalk | grep {` and then found the flag: 
+```
+c2c_ 
+f{Qv7T8bWcY3nR1oJ}
+```
+After fixing the flag with the correct format: 
+
+**Flag**: C2C_CTF{Qv7T8bWcY3nR1oJ}
 
 ## Husky Hungry
 Provided binary: `huskyhungry`
@@ -100,38 +140,6 @@ Putting the flag y2y_ypb{mtkLrrReqfswcJNh} into cyberchef with `ROT13` and a key
 
 **Flag**: c2c_ctf{qxoPvvViujwagNRl}
 
-## HuskySniff
-Provided binary: `huskysniff`
-```
-roya@LAPTOP-EGQVCHJB:/mnt/c/C2CTF$ ./huskysniff
-Word on campus is the Northeastern Husky sniffed out the hidden flag—apparently it's tucked away in the executable. Woof you waiting for? Happy hacking!  
-```
-I ran `strings`:
-```
-/lib64/ld-linux-x86-64.so.2 // line 1
-libc.so.6
-__printf_chk
-__cxa_finalize
-__libc_start_main
-GLIBC_2.3.4
-GLIBC_2.2.5
-_ITM_deregisterTMCloneTable
-__gmon_start__
-_ITM_registerTMCloneTable
-u+UH
-[]A\A]A^A_
-zwumeitzjgqcvrbvzcrprazsi
-uophrzihzqnonznzkfzfvtkxy
-......
-.fini_array
-.dynamic
-.data
-.bss
-.comment // line 826
-```
-Then `grep`'d it with `string=c2c` to get `c2c_ctf{crwzotngdyqfqbjc}`
-
-**Flag**: c2c_ctf{crwzotngdyqfqbjc}
 
 # Cryptography
 
@@ -154,12 +162,26 @@ I spent an awful amount of time on this 100 point challenge, but I started looki
 **Flag**: C2C_CTF{Marina_Beach_Chennai}
 
 ## Picture Game
+---
 Missing challenge prompt, but the goal was to find the location of the image:
+
+![Picture game](/c2c/OSINT-PictureGame.png "Japanese Shrine") 
 
 Flag Format: C2C_CTF{Something_Something_City}
 
+---
+
+The image was impossible to reverse image search so the first step was to take a look at what was in the image, I first noticed a unique circular logo:
+
+MIGI MISTUDOME IMG
+
+Looking it up on google it's a pretty common thing to find in Japanese Shinto Shrines so I started looking up Shinto Shrines in Japan. The only problem is that there are A LOT of Shinto Shrines in Japan and finding this one would be a bit difficult since this is not the only red one in Japan. 
+
+
+
 
 # Web
+
 
 ## Hunger Games
 
