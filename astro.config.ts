@@ -8,8 +8,8 @@ import { SITE } from "./src/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://royaboya.github.io/royaboya.github.io",
-  
+  site: "https://royaboya.github.io",
+
   integrations: [
     tailwind({
       applyBaseStyles: false,
