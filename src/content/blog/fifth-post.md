@@ -2,7 +2,7 @@
 title: 'C2C CTF 2025'
 description: 'Fifth Post'
 pubDatetime: 2025-02-09T00:00:00Z
-heroImage: '/c2c.jpg'
+#heroImage: '/c2c.jpg'
 ---
 I got incredibly humbled by this CTF but it was a good learning experience nonetheless. I did end up qualifying for finals (I think) despite not doing much on the second day of the CTF. I also wasn't able to save the web challenges since the server is down.
 

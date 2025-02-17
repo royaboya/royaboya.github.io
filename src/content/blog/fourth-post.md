@@ -2,7 +2,7 @@
 title: "NEU CTF Club 'Red Envelope Riddles'"
 description: 'Fourth Post'
 pubDatetime: 2025-01-27T00:00:00Z
-heroImage: '/rer/title.png'
+#heroImage: '/rer/title.png'
 ---
 I was a little late to the GM but I got a decent portion of the challenges done besides the last two
 

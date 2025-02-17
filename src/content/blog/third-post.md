@@ -2,7 +2,7 @@
 title: "NEU CTF Club 'Hack the Playground'"
 description: 'Third Post'
 pubDatetime: 2025-01-14T00:00:00Z
-heroImage: '/htp/title.png'
+#heroImage: '/htp/title.png'
 ---
 
 Some solutions to my school's CTF Club Challenges for the Hack the Playground GM in the time that I was there 

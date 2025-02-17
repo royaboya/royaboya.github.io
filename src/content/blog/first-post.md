@@ -2,7 +2,7 @@
 title: 'Creating a really simple EXIF Data Reader'
 description: 'First Post'
 pubDatetime: 2024-12-21T00:00:00Z
-heroImage: '/exif.png'
+#heroImage: '/exif.png'
 ---
 
 Exchangeable Image File Format (EXIF) data is a way of storing specific metadata    inside an image file which can include records on the matter in which the photo was taken. Recorded metadata can include any camera settings used, time, date, location, and any other miscellaneous details regarding the image. 
