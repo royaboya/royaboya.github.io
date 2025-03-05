@@ -46,6 +46,7 @@ docker build -t [challenge_name] . && docker run -it -p 5000:5000 [challenge_nam
 
 Press the Start button on the top-right to begin this challenge.
 
+The instance was vulnerable to command injection so you had to test out a couple commands
 
 ### Screaming Crying Throwing Up - [Easy]
 >Or some xkcd cipher like that.
