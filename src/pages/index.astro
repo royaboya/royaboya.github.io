@@ -1,0 +1,366 @@
+---
+const name = "Roy Chen";
+const tagline = "Northeastern // Networking";
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith("/") ? rawBase : `${rawBase}/`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{name} — {tagline}</title>
+    <meta name="description" content={`Portfolio of ${name}: projects, blog, and CTF writeups.`} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <span class="brand">~</span>
+      <nav class="nav" aria-label="Site sections">
+        <a href={`${base}about`}>about</a>
+        <a href={`${base}projects`}>projects</a>
+        <a href={`${base}blog`}>blog</a>
+        <a href={`${base}writeups`}>writeups</a>
+        <a href={`${base}contact`}>contact</a>
+      </nav>
+    </header>
+
+    <main class="crt">
+      <div class="window" role="application" aria-label="Interactive terminal">
+        <div class="titlebar">
+          <span class="dot" aria-hidden="true"></span>
+          <span class="dot" aria-hidden="true"></span>
+          <span class="dot" aria-hidden="true"></span>
+          <span class="path">guest@portfolio: ~</span>
+        </div>
+
+        <div class="screen" id="screen" tabindex="-1">
+          <div id="log" aria-live="polite"></div>
+
+          <div class="prompt-line">
+            <label for="cmd" class="prompt-label">guest@portfolio:~$</label>
+            <input
+              id="cmd"
+              class="prompt-input"
+              type="text"
+              autocomplete="off"
+              autocapitalize="off"
+              spellcheck="false"
+              aria-label="Terminal command input"
+            />
+          </div>
+        </div>
+      </div>
+
+      <p class="hint">
+        Type <code>help</code> to see what this does — or just use the menu above, the terminal is entirely optional.
+      </p>
+    </main>
+
+    <script define:vars={{ name, tagline, base }}>
+      const log = document.getElementById("log");
+      const input = document.getElementById("cmd");
+      const screen = document.getElementById("screen");
+
+      const routes = {
+        about: `${base}about`,
+        projects: `${base}projects`,
+        blog: `${base}blog`,
+        writeups: `${base}writeups`,
+        contact: `${base}contact`,
+      };
+
+      const helpText = [
+        "available commands:",
+        "  about       - who i am",
+        "  projects    - things i've built",
+        "  blog        - writing",
+        "  writeups    - ctf writeups",
+        "  contact     - get in touch",
+        "  ls          - list sections",
+        "  clear       - clear the screen",
+        "  help        - show this again",
+      ];
+
+      function print(lines) {
+        const arr = Array.isArray(lines) ? lines : [lines];
+        for (const line of arr) {
+          const div = document.createElement("div");
+          div.className = "line";
+          div.textContent = line;
+          log.appendChild(div);
+        }
+        screen.scrollTop = screen.scrollHeight;
+      }
+
+      function printEcho(command) {
+        const div = document.createElement("div");
+        div.className = "line echo";
+        div.textContent = `guest@portfolio:~$ ${command}`;
+        log.appendChild(div);
+      }
+
+      function runCommand(raw) {
+        const command = raw.trim();
+        if (!command) return;
+        printEcho(command);
+
+        const [head] = command.toLowerCase().split(/\s+/);
+
+        switch (head) {
+          case "help":
+            print(helpText);
+            break;
+          case "ls":
+            print(Object.keys(routes).join("   "));
+            break;
+          case "clear":
+            log.innerHTML = "";
+            break;
+          case "whoami":
+            print(`guest — but you're here to learn about ${name}. try 'about'.`);
+            break;
+          case "sudo":
+            print("nice try. you have no power here.");
+            break;
+          case "about":
+          case "projects":
+          case "blog":
+          case "writeups":
+          case "contact":
+            print(`opening ${head} ...`);
+            setTimeout(() => {
+              window.location.href = routes[head];
+            }, 300);
+            break;
+          default:
+            print(`command not found: ${head} — type 'help' for a list of commands`);
+        }
+      }
+
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          runCommand(input.value);
+          input.value = "";
+        }
+      });
+
+      screen.addEventListener("click", () => input.focus());
+
+      const bootLines = [
+        "booting portfolio.sys ...",
+        `loading profile: ${name} ...`,
+        "initializing shell ...",
+        "",
+        `${name} — ${tagline}`,
+        "type 'help' to see available commands.",
+        "",
+      ];
+
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      if (prefersReducedMotion) {
+        print(bootLines);
+        input.focus();
+      } else {
+        let i = 0;
+        const boot = setInterval(() => {
+          print(bootLines[i]);
+          i++;
+          if (i >= bootLines.length) {
+            clearInterval(boot);
+            input.focus();
+          }
+        }, 220);
+      }
+    </script>
+
+    <style>
+      :root {
+        --bg: #1a1410;
+        --panel: #201a14;
+        --border: #3a2f22;
+        --amber: #ffb347;
+        --amber-dim: #a97c3c;
+        --amber-bright: #ffd280;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg);
+        color: var(--amber);
+        font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+      }
+
+      .site-header {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid var(--border);
+        font-size: 0.85rem;
+        flex-wrap: wrap;
+      }
+
+      .brand {
+        color: var(--amber-bright);
+        font-weight: 600;
+      }
+
+      .nav {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .nav a {
+        text-decoration: none;
+        color: var(--amber-dim);
+      }
+
+      .nav a:hover,
+      .nav a:focus-visible {
+        color: var(--amber-bright);
+      }
+
+      .crt {
+        min-height: calc(100vh - 57px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1rem;
+        gap: 1rem;
+      }
+
+      .window {
+        width: 100%;
+        max-width: 720px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        overflow: hidden;
+        background: var(--panel);
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4);
+      }
+
+      .titlebar {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 0.8rem;
+        background: #14100c;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--border);
+        display: inline-block;
+      }
+
+      .path {
+        margin-left: 0.5rem;
+        color: var(--amber-dim);
+        font-size: 0.8rem;
+      }
+
+      .screen {
+        padding: 1.25rem 1.25rem 0.9rem;
+        height: 60vh;
+        min-height: 360px;
+        max-height: 520px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+      }
+
+      #log {
+        flex: 0 0 auto;
+      }
+
+      .line {
+        white-space: pre-wrap;
+        line-height: 1.6;
+        font-size: 0.95rem;
+      }
+
+      .line.echo {
+        color: var(--amber-bright);
+      }
+
+      .prompt-line {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 0.4rem;
+      }
+
+      .prompt-label {
+        color: var(--amber-bright);
+        font-size: 0.95rem;
+        white-space: nowrap;
+      }
+
+      .prompt-input {
+        flex: 1;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: var(--amber);
+        font-family: inherit;
+        font-size: 0.95rem;
+        caret-color: var(--amber-bright);
+      }
+
+      .prompt-input:focus {
+        outline: 1px dashed var(--amber-dim);
+        outline-offset: 4px;
+      }
+
+      .hint {
+        max-width: 720px;
+        width: 100%;
+        color: var(--amber-dim);
+        font-size: 0.8rem;
+        margin: 0;
+        text-align: left;
+      }
+
+      .hint code {
+        color: var(--amber);
+        background: var(--panel);
+        padding: 0.05rem 0.35rem;
+        border-radius: 3px;
+        border: 1px solid var(--border);
+      }
+
+      @media (max-width: 480px) {
+        .screen {
+          height: 65vh;
+          padding: 1rem;
+        }
+        .line,
+        .prompt-input,
+        .prompt-label {
+          font-size: 0.85rem;
+        }
+      }
+    </style>
+  </body>
+</html>

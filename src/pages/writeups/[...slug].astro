@@ -1,0 +1,50 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const writeups = await getCollection("writeups", ({ data }) => !data.draft);
+  return writeups.map((writeup) => ({
+    params: { slug: writeup.id },
+    props: { writeup },
+  }));
+}
+
+const { writeup } = Astro.props;
+const { Content } = await render(writeup);
+---
+
+<Base
+  title={`${writeup.data.title} — Writeups`}
+  description={writeup.data.description}
+>
+  <article>
+    <h1>{writeup.data.title}</h1>
+    <p class="meta">
+      {writeup.data.event} · {writeup.data.category}
+      {writeup.data.difficulty && ` · ${writeup.data.difficulty}`}
+      · {writeup.data.pubDate.toISOString().slice(0, 10)}
+    </p>
+    <div class="body">
+      <Content />
+    </div>
+  </article>
+
+  <style>
+    .meta {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--amber-dim);
+      margin-top: -0.5rem;
+    }
+    .body :global(h2) {
+      margin-top: 2rem;
+    }
+    .body :global(pre) {
+      font-size: 0.85rem;
+    }
+    .body :global(a) {
+      text-decoration: underline;
+    }
+  </style>
+</Base>

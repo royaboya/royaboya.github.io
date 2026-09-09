@@ -1,0 +1,172 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith("/") ? rawBase : `${rawBase}/`;
+
+const navItems = [
+  { label: "about", href: `${base}about` },
+  { label: "projects", href: `${base}projects` },
+  { label: "blog", href: `${base}blog` },
+  { label: "writeups", href: `${base}writeups` },
+  { label: "contact", href: `${base}contact` },
+];
+
+// Mark a tab active if the current path starts with that section's path,
+// so e.g. /blog/hello-world/ still highlights "blog".
+const currentPath = Astro.url.pathname;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href={`${base}`}>~</a>
+      <nav class="nav">
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class={currentPath.startsWith(item.href) ? "active" : ""}
+            aria-current={currentPath.startsWith(item.href) ? "page" : undefined}
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
+    </header>
+
+    <main class="content">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <span>Roy Chen - Built with Astro</span>
+    </footer>
+
+    <style is:global>
+      :root {
+        --bg: #1a1410;
+        --panel: #201a14;
+        --border: #3a2f22;
+        --amber: #ffb347;
+        --amber-dim: #a97c3c;
+        --amber-bright: #ffd280;
+        --parchment: #e8ddc7;
+        --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+        --serif: "IBM Plex Serif", Georgia, serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg);
+        color: var(--parchment);
+        font-family: var(--serif);
+      }
+
+      a {
+        color: var(--amber);
+      }
+
+      a:hover,
+      a:focus-visible {
+        color: var(--amber-bright);
+      }
+
+      h1, h2, h3, h4 {
+        font-family: var(--mono);
+        color: var(--amber-bright);
+        line-height: 1.3;
+      }
+
+      .site-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid var(--border);
+        font-family: var(--mono);
+        font-size: 0.85rem;
+        flex-wrap: wrap;
+      }
+
+      .brand {
+        color: var(--amber-bright);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .nav {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .nav a {
+        text-decoration: none;
+        color: var(--amber-dim);
+      }
+
+      .nav a:hover,
+      .nav a:focus-visible {
+        color: var(--amber-bright);
+      }
+
+      .nav a.active {
+        color: var(--amber-bright);
+        font-weight: 600;
+      }
+
+      .content {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 2.5rem 1.5rem 4rem;
+      }
+
+      .content p {
+        line-height: 1.7;
+        font-size: 1.05rem;
+      }
+
+      .site-footer {
+        text-align: center;
+        color: var(--amber-dim);
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        padding: 2rem 1rem 3rem;
+      }
+
+      code, pre {
+        font-family: var(--mono);
+      }
+
+      pre {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+    </style>
+  </body>
+</html>

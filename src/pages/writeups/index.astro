@@ -1,0 +1,73 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith("/") ? rawBase : `${rawBase}/`;
+
+const writeups = (
+  await getCollection("writeups", ({ data }) => !data.draft)
+).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Base
+  title="Writeups — RC"
+  description="Writeups, CTF or not"
+>
+  <h1>CTF Writeups</h1>
+  <p>Any Writeups will be here, empty for the time being.</p>
+
+  <ul class="listing">
+    {writeups.map((w) => (
+      <li>
+        <a href={`${base}writeups/${w.id}`}>{w.data.title}</a>
+        <span class="meta">
+          {w.data.event} · {w.data.category}
+          {w.data.difficulty && ` · ${w.data.difficulty}`}
+        </span>
+        <p class="desc">{w.data.description}</p>
+      </li>
+    ))}
+  </ul>
+
+  {writeups.length === 0 && (
+    <p class="empty">No writeups yet — check back soon.</p>
+  )}
+
+  <style>
+    .listing {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .listing li {
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .listing li:last-child {
+      border-bottom: none;
+    }
+    .listing a {
+      font-family: var(--mono);
+      font-size: 1rem;
+      text-decoration: none;
+    }
+    .meta {
+      display: block;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--amber-dim);
+      margin-top: 0.2rem;
+    }
+    .desc {
+      margin: 0.5rem 0 0;
+    }
+    .empty {
+      color: var(--amber-dim);
+      font-family: var(--mono);
+    }
+  </style>
+</Base>

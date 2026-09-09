@@ -1,0 +1,60 @@
+---
+import Base from "../layouts/Base.astro";
+
+const projects = [
+  {
+    name: "File Integrity Monitoring Tool",
+    description: "Desc",
+    stack: "Python",
+    url: "https://github.com",
+  },
+  {
+    name: "project-two",
+    description: "Desc",
+    stack: "desc",
+    url: "https://github.com",
+  },
+];
+---
+
+<Base title="Projects — Roy Chen" description="Projects by Roy Chen">
+  <h1>Projects</h1>
+  <p>A few things I've built. Each one links to the source.</p>
+
+  <ul class="project-list">
+    {projects.map((p) => (
+      <li class="project">
+        <h2><a href={p.url} target="_blank" rel="noopener noreferrer">{p.name}</a></h2>
+        <p>{p.description}</p>
+        <p class="stack">{p.stack}</p>
+      </li>
+    ))}
+  </ul>
+
+  <style>
+    .project-list {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .project {
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .project:last-child {
+      border-bottom: none;
+    }
+    .project h2 {
+      margin-bottom: 0.4rem;
+      font-size: 1.1rem;
+    }
+    .stack {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--amber-dim);
+    }
+  </style>
+</Base>
