@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
@@ -10,23 +10,17 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout your repository using git
+        uses: actions/checkout@v7
 
-      - name: Install, build, and upload
-        uses: withastro/action@v3
-        # By default this action:
-        #   - installs deps with npm/yarn/pnpm (auto-detected)
-        #   - runs `astro build`
-        #   - uploads ./dist as the Pages artifact
+      - name: Install, build, and upload your site
+        uses: withastro/action@v6
+        with:
+          node-version: 22
 
   deploy:
     needs: build
@@ -34,7 +28,8 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
