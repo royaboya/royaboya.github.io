@@ -1,13 +1,23 @@
 ---
 import Base from "../layouts/Base.astro";
+const base = import.meta.env.BASE_URL;
+
 ---
 
 <Base title="About — Roy Chen" description="About me">
+   <img
+    class="avatar"
+    src={`${base}profile.jpg`}
+    alt="Roy Chen"
+    width="160"
+    height="160"
+  />
+
   <h1>About</h1>
+
   <p>
-    Hi I'm Roy, a 4th year cybersecurity student at Northeastern University with a background in network engineering & IT.
-    I've worked with cloud infrastructure, AWS security groups, Terraform, network monitoring, documentation, and diagramming
-    with my interest being in network security.
+    Hi I'm Roy, a 4th year cybersecurity student at Northeastern University with a background in network engineering & IT and interest in network security.
+    I've worked with cloud infrastructure, AWS security groups, Terraform, network monitoring, documentation, and diagramming.
   </p>
   <p>
     If you would like to connect, feel free to reach out at: <a href="mailto:chen.roy1@northeastern.edu">chen.roy1@northeastern.edu</a>.
@@ -19,4 +29,20 @@ import Base from "../layouts/Base.astro";
       <li>Security & Networking: TCP/IP, DNS, HTTP/S, TLS/SSL, Firewalls</li>
       <li>Tools: Terraform, UNIX CLI, Docker, Datadog, Wazuh</li>
   </ul>
+
+
+  <style>
+    .avatar {
+      display: block;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--border);
+      outline: 1px solid var(--amber-dim);
+      outline-offset: 4px;
+      margin: 0 0 1.5rem;
+    }
+  </style>
+
 </Base>
