@@ -23,7 +23,7 @@ My second project dealt with creating new network diagrams for our DNS architect
 
 I was really rusty with DNS at this point so I had to get a huge refresher on the entire DNS resolution hierarchy, all of the different records, and the specifics on the SOAs. Afterwards, I also had to learn about the specifics to our environment which took me a hot minute to get my head around but it clicked in soon after that. 
 
-Another challenge I faced was figuring out how to use [draw.io](https://draw.io) to create a digestable and not overly complicated diagram. Not only that, but trying to figure out what icons and logos to use to represent different environments and servers was also a bit confusing but after a few mock-ups. 
+Another challenge I faced was figuring out how to use [draw.io](https://draw.io) to create a digestable and not overly complicated diagram. Not only that, but trying to figure out what icons and logos to use to represent different environments and servers was also a bit confusing but after a few mock-ups I finally got it down. 
 
 On the bright side, I did receive positive feedback from it and one of my team members noted that my documentation was better than what some of the full timers wrote. Bang.
 
