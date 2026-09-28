@@ -12,7 +12,7 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
 
 <Base title="Blog — Roy Chen" description="My blogs">
   <h1>Blog</h1>
-  <p>Notes on things I've learned or built.</p>
+  <p>Notes on things I've learned, bought, or built.</p>
 
   <ul class="listing">
     {posts.map((post) => (
